@@ -19,7 +19,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-charcoal-800/80 bg-charcoal-950/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-charcoal-800/80 bg-black/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Logo />
 
@@ -60,7 +60,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="border-t border-charcoal-800 bg-charcoal-950 px-4 py-3 lg:hidden animate-fadeIn">
+        <nav className="border-t border-charcoal-800 bg-black px-4 py-3 lg:hidden animate-fadeIn">
           <div className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <Link

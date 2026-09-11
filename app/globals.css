@@ -9,18 +9,15 @@
   }
 
   body {
-    @apply bg-charcoal-950 text-charcoal-100 antialiased;
+    @apply bg-black text-charcoal-100 antialiased;
     background-image:
-      radial-gradient(ellipse 70% 45% at 50% -8%, rgba(47, 111, 224, 0.16), transparent),
-      radial-gradient(ellipse 55% 35% at 100% 10%, rgba(47, 111, 224, 0.08), transparent),
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: auto, auto, 32px 32px, 32px 32px;
+      radial-gradient(ellipse 60% 40% at 50% -5%, rgba(47, 111, 224, 0.22), transparent),
+      radial-gradient(ellipse 45% 30% at 100% 15%, rgba(47, 111, 224, 0.1), transparent);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
-    @apply font-pixel tracking-tight;
+    @apply font-pixel font-semibold tracking-tight;
   }
 
   ::selection {
@@ -45,19 +42,27 @@
 
 @layer components {
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-moss-500 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(47,111,224,0.3),0_4px_20px_-4px_rgba(47,111,224,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-moss-400 hover:shadow-[0_0_0_1px_rgba(91,143,245,0.4),0_8px_28px_-4px_rgba(47,111,224,0.7)] active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-moss-500 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(47,111,224,0.35),0_4px_24px_-4px_rgba(47,111,224,0.6)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-moss-400 hover:shadow-[0_0_0_1px_rgba(91,143,245,0.5),0_12px_36px_-6px_rgba(47,111,224,0.85)] active:translate-y-0 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent;
+    transition: transform 0.6s ease;
+  }
+  .btn-primary:hover::before {
+    transform: translateX(200%);
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-charcoal-700 bg-charcoal-900 px-4 py-2.5 text-sm font-semibold text-charcoal-100 transition-all duration-200 hover:-translate-y-0.5 hover:border-moss-600/70 hover:bg-charcoal-800 hover:text-white active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-charcoal-700 bg-charcoal-900 px-4 py-2.5 text-sm font-semibold text-charcoal-100 transition-all duration-300 hover:-translate-y-1 hover:border-moss-500 hover:bg-charcoal-800 hover:text-white hover:shadow-glow active:translate-y-0 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-danger {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-ember-500/30 bg-ember-500/10 px-4 py-2.5 text-sm font-semibold text-ember-400 transition-all duration-200 hover:-translate-y-0.5 hover:bg-ember-500/20 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-ember-500/30 bg-ember-500/10 px-4 py-2.5 text-sm font-semibold text-ember-400 transition-all duration-300 hover:-translate-y-1 hover:bg-ember-500/20 active:translate-y-0 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50;
   }
   .card {
     @apply rounded-xl border border-charcoal-800 bg-charcoal-900/60 backdrop-blur-sm shadow-glow transition-all duration-300;
   }
   .card-interactive {
-    @apply card hover:-translate-y-1 hover:border-moss-600/50 hover:shadow-glow-lg;
+    @apply card hover:-translate-y-1.5 hover:scale-[1.015] hover:border-moss-500/70 hover:shadow-glow-lg;
   }
   .label {
     @apply block text-xs font-medium uppercase tracking-wide text-charcoal-400 mb-1.5;
@@ -66,12 +71,22 @@
     @apply mt-1 text-xs text-ember-400;
   }
   .glow-orb {
-    @apply pointer-events-none absolute rounded-full blur-3xl;
-    background: radial-gradient(circle, rgba(47, 111, 224, 0.35), transparent 70%);
+    @apply pointer-events-none absolute rounded-full blur-3xl animate-glowPulse;
+    background: radial-gradient(circle, rgba(47, 111, 224, 0.45), transparent 70%);
   }
   .text-gradient {
     @apply bg-gradient-to-r from-moss-300 via-moss-400 to-moss-200 bg-clip-text text-transparent;
     background-size: 200% auto;
     animation: gradientShift 6s ease infinite;
+  }
+  .nav-link {
+    @apply relative;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 h-0.5 w-0 bg-moss-400 transition-all duration-300;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
   }
 }

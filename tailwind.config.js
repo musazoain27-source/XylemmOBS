@@ -14,12 +14,12 @@ module.exports = {
           400: '#6b7788',
           500: '#4a5568',
           600: '#333d4d',
-          700: '#232a36',
-          800: '#171c26',
-          850: '#12151d',
-          900: '#0c0e14',
-          925: '#090a10',
-          950: '#05060a',
+          700: '#1c212b',
+          800: '#12151c',
+          850: '#0a0c11',
+          900: '#050609',
+          925: '#020304',
+          950: '#000000',
         },
         // Electric blue accent — the "blue" half of the theme. Kept the
         // "moss" key name so every existing component class (moss-400,
@@ -44,7 +44,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-        pixel: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        pixel: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 0 0 1px rgba(47, 111, 224, 0.18), 0 8px 30px -8px rgba(7, 23, 61, 0.7)',

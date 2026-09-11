@@ -157,7 +157,7 @@ export default function AdminIssueReviewPage() {
         {issue.error_message && (
           <div className="mt-4">
             <p className="label">Error Message</p>
-            <pre className="whitespace-pre-wrap break-words rounded-lg bg-charcoal-950 p-3 font-mono text-xs text-ember-300">{issue.error_message}</pre>
+            <pre className="whitespace-pre-wrap break-words rounded-lg bg-black p-3 font-mono text-xs text-ember-300">{issue.error_message}</pre>
           </div>
         )}
 

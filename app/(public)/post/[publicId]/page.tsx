@@ -105,7 +105,7 @@ export default async function PostPage({ params }: { params: { publicId: string 
 
       {issue.error_message && (
         <Field label="Error Message">
-          <pre className="whitespace-pre-wrap break-words rounded-lg bg-charcoal-950 p-3 font-mono text-xs text-ember-300">{issue.error_message}</pre>
+          <pre className="whitespace-pre-wrap break-words rounded-lg bg-black p-3 font-mono text-xs text-ember-300">{issue.error_message}</pre>
         </Field>
       )}
 

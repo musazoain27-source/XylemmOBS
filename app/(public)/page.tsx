@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import PostCard from '@/components/PostCard';
+import ModGallery from '@/components/ModGallery';
 import { EmptyState } from '@/components/ui/States';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 
@@ -51,21 +52,26 @@ export default async function HomePage() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-charcoal-800/80 px-4 py-16 sm:py-24">
+        <div className="glow-orb -top-32 left-1/2 h-80 w-80 -translate-x-1/2" />
+        <div className="glow-orb -right-20 top-20 h-64 w-64 opacity-60" style={{ animationDelay: '1.5s' }} />
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <Logo size={72} withText={false} href={null} className="mb-6 animate-fadeIn" />
-          <h1 className="font-pixel text-2xl leading-tight text-charcoal-50 sm:text-3xl">XylemmOBS Support</h1>
-          <p className="mt-4 max-w-xl text-balance text-charcoal-400">
+          <Logo size={72} withText={false} href={null} className="mb-6 animate-fadeInUp" />
+          <h1 className="animate-fadeInUp font-pixel text-2xl leading-tight text-charcoal-50 sm:text-4xl" style={{ animationDelay: '0.1s' }}>
+            XylemmOBS <span className="text-gradient">Support</span>
+          </h1>
+          <p className="mt-4 max-w-xl animate-fadeInUp text-balance text-charcoal-400" style={{ animationDelay: '0.2s' }}>
             Ask questions, report issues, request features, and help improve XylemmOBS.
           </p>
 
-          <div className="mt-9 grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {ACTIONS.map((action) => (
+          <div className="mt-9 grid w-full animate-fadeInUp grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4" style={{ animationDelay: '0.3s' }}>
+            {ACTIONS.map((action, i) => (
               <Link
                 key={action.href}
                 href={action.href}
-                className="card group flex flex-col items-center gap-2.5 p-5 text-center transition-all hover:-translate-y-0.5 hover:border-moss-500/60"
+                className="card-interactive group flex flex-col items-center gap-2.5 p-5 text-center"
+                style={{ animationDelay: `${0.35 + i * 0.08}s` }}
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-moss-500/10 text-moss-400 transition-colors group-hover:bg-moss-500/20">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-moss-500/10 text-moss-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-moss-500/25 group-hover:text-moss-300">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     {action.icon}
                   </svg>
@@ -79,6 +85,8 @@ export default async function HomePage() {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-14 px-4 py-14 sm:px-6">
+        <ModGallery />
+
         <Section title="Recent Questions" viewAllHref="/browse?type=question">
           {recentQuestions?.length ? (
             <Grid>
