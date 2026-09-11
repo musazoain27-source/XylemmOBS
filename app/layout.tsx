@@ -1,20 +1,19 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { ToastProvider } from '@/components/ui/Toast';
+
 export const metadata: Metadata = {
-  title: 'XylemmOBS — Support',
-  description:
-    'Recording answers, questions, and private issue reports for XylemmOBS.',
+  title: 'XylemmOBS Support',
+  description: 'Ask questions, report issues, request features, and help improve XylemmOBS.',
   icons: { icon: '/logo.png' },
-  referrer: 'no-referrer',
 };
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body>{children}</body>
+    <html lang="en">
+      <body className="min-h-screen bg-charcoal-950">
+        <ToastProvider>{children}</ToastProvider>
+      </body>
     </html>
   );
 }
