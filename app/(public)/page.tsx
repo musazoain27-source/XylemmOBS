@@ -40,11 +40,11 @@ const ACTIONS = [
 export default async function HomePage() {
   const supabase = createServerSupabaseClient();
 
-  const [{ data: recentQuestions }, { data: recentIssues }, { data: knownIssues }, { data: fixedIssues }, { data: popularFeatures }] =
+  const [{ data: recentQuestions }, { data: recentIssues }, { data: faqQuestions }, { data: fixedIssues }, { data: popularFeatures }] =
     await Promise.all([
       supabase.from('questions').select('public_id, title, username, created_at, status, category').eq('is_deleted', false).order('created_at', { ascending: false }).limit(4),
       supabase.from('issues').select('public_id, title, username, created_at, status, priority, is_known_issue').eq('is_deleted', false).order('created_at', { ascending: false }).limit(4),
-      supabase.from('issues').select('public_id, title, username, created_at, status, priority, is_known_issue').eq('is_deleted', false).eq('is_known_issue', true).order('created_at', { ascending: false }).limit(4),
+      supabase.from('questions').select('public_id, title, username, created_at, status, category').eq('is_deleted', false).eq('status', 'answered').order('created_at', { ascending: true }).limit(4),
       supabase.from('issues').select('public_id, title, username, created_at, status, priority').eq('is_deleted', false).eq('status', 'fixed').order('updated_at', { ascending: false }).limit(4),
       supabase.from('feature_requests').select('public_id, title, username, created_at, status, category, upvote_count').eq('is_deleted', false).order('upvote_count', { ascending: false }).limit(4),
     ]);
@@ -118,12 +118,12 @@ export default async function HomePage() {
           </Reveal>
         )}
 
-        {!!knownIssues?.length && (
+        {!!faqQuestions?.length && (
           <Reveal>
-            <Section title="Known Issues" viewAllHref="/known-issues">
+            <Section title="Frequently Asked Questions" viewAllHref="/faq">
               <Grid>
-                {knownIssues.map((i) => (
-                  <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
+                {faqQuestions.map((q) => (
+                  <PostCard key={q.public_id} post={{ ...q, type: 'question' }} />
                 ))}
               </Grid>
             </Section>

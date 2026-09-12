@@ -12,7 +12,7 @@ const LINKS = [
   { href: '/report', label: 'Report an Issue' },
   { href: '/feature-request', label: 'Request a Feature' },
   { href: '/browse', label: 'Browse' },
-  { href: '/known-issues', label: 'Known Issues' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Navbar() {
