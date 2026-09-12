@@ -23,7 +23,7 @@ export default function SubmissionSuccess({
 
   return (
     <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-20 text-center sm:px-6">
-      <Logo size={56} withText={false} href={null} className="mb-6" />
+      <Logo size={56} withText={false} href={null} glow className="mb-6" />
       <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-moss-500/15 text-moss-400">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 6L9 17l-5-5" />

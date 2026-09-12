@@ -6,7 +6,7 @@ export default function DownloadBanner() {
     <section className="card-interactive relative flex flex-col items-center gap-6 overflow-hidden p-6 text-center sm:flex-row sm:justify-between sm:p-8 sm:text-left">
       <div className="glow-orb -left-16 top-1/2 h-56 w-56 -translate-y-1/2 opacity-40" />
       <div className="relative flex items-center gap-4">
-        <Logo size={52} withText={false} href={null} />
+        <Logo size={52} withText={false} href={null} glow />
         <div>
           <h2 className="text-lg font-semibold text-charcoal-50">Download XylemmOBS</h2>
           <p className="mt-1 text-sm text-charcoal-400">

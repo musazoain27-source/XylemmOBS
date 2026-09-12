@@ -4,7 +4,7 @@ import Logo from '@/components/Logo';
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-black px-4 text-center">
-      <Logo size={56} withText={false} href={null} className="mb-6" />
+      <Logo size={56} withText={false} href={null} glow className="mb-6" />
       <h1 className="font-pixel text-lg text-charcoal-50">404</h1>
       <p className="mt-3 max-w-sm text-sm text-charcoal-400">
         This page doesn't exist, or the submission you're looking for may have been removed.

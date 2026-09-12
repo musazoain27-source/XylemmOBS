@@ -17,7 +17,7 @@ export default async function KnownIssuesPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <div className="mb-8 flex flex-col items-center text-center">
-        <Logo size={44} withText={false} href={null} className="mb-4" />
+        <Logo size={44} withText={false} href={null} glow className="mb-4" />
         <h1 className="text-xl font-medium text-charcoal-50">Known Issues</h1>
         <p className="mt-2 max-w-lg text-sm text-charcoal-400">
           Confirmed problems the team is already aware of. Check here before submitting a new report to avoid duplicates.

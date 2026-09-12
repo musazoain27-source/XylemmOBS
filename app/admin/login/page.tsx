@@ -39,7 +39,7 @@ function AdminLoginForm() {
     <div className="flex min-h-screen items-center justify-center bg-black px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 flex flex-col items-center text-center">
-          <Logo size={56} withText={false} href="/" className="mb-4" />
+          <Logo size={56} withText={false} href="/" glow className="mb-4" />
           <h1 className="text-xl font-bold text-charcoal-50">XylemmOBS Admin</h1>
           <p className="mt-1 text-sm text-charcoal-500">Sign in to manage the support platform.</p>
         </div>

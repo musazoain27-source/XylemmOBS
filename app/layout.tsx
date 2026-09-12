@@ -13,7 +13,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'XylemmOBS Support',
   description: 'Ask questions, report issues, request features, and help improve XylemmOBS.',
-  icons: { icon: '/logo.png' },
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

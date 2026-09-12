@@ -3,7 +3,7 @@ import Logo from '@/components/Logo';
 import PostCard from '@/components/PostCard';
 import ModGallery from '@/components/ModGallery';
 import DownloadBanner from '@/components/DownloadBanner';
-import { EmptyState } from '@/components/ui/States';
+import Reveal from '@/components/Reveal';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 
 export const dynamic = 'force-dynamic';
@@ -57,7 +57,7 @@ export default async function HomePage() {
         <div className="glow-orb -right-32 top-10 h-80 w-80 opacity-60" style={{ animationDelay: '1.5s' }} />
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <Logo size={64} withText={false} href={null} className="mb-6 animate-fadeInUp" />
+            <Logo size={64} withText={false} href={null} glow className="mb-6 animate-fadeInUp" />
             <h1 className="animate-fadeInUp font-pixel text-2xl leading-tight text-charcoal-50 sm:text-3xl md:text-4xl" style={{ animationDelay: '0.1s' }}>
               XylemmOBS <span className="text-gradient">Support</span>
             </h1>
@@ -92,67 +92,67 @@ export default async function HomePage() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-14 px-4 py-14 sm:px-6">
-        <DownloadBanner />
+        <Reveal><DownloadBanner /></Reveal>
 
-        <Section title="Recent Questions" viewAllHref="/browse?type=question">
-          {recentQuestions?.length ? (
-            <Grid>
-              {recentQuestions.map((q) => (
-                <PostCard key={q.public_id} post={{ ...q, type: 'question' }} />
-              ))}
-            </Grid>
-          ) : (
-            <EmptyState title="No questions yet" description="Be the first to ask something." />
-          )}
-        </Section>
+        {!!recentQuestions?.length && (
+          <Reveal>
+            <Section title="Recent Questions" viewAllHref="/browse?type=question">
+              <Grid>
+                {recentQuestions.map((q) => (
+                  <PostCard key={q.public_id} post={{ ...q, type: 'question' }} />
+                ))}
+              </Grid>
+            </Section>
+          </Reveal>
+        )}
 
-        <Section title="Recent Issues" viewAllHref="/browse?type=issue">
-          {recentIssues?.length ? (
-            <Grid>
-              {recentIssues.map((i) => (
-                <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
-              ))}
-            </Grid>
-          ) : (
-            <EmptyState title="No issues reported" description="Everything running smoothly so far." />
-          )}
-        </Section>
+        {!!recentIssues?.length && (
+          <Reveal>
+            <Section title="Recent Issues" viewAllHref="/browse?type=issue">
+              <Grid>
+                {recentIssues.map((i) => (
+                  <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
+                ))}
+              </Grid>
+            </Section>
+          </Reveal>
+        )}
 
-        <Section title="Known Issues" viewAllHref="/known-issues">
-          {knownIssues?.length ? (
-            <Grid>
-              {knownIssues.map((i) => (
-                <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
-              ))}
-            </Grid>
-          ) : (
-            <EmptyState title="No known issues" description="Check back later, or report one if you've found a bug." />
-          )}
-        </Section>
+        {!!knownIssues?.length && (
+          <Reveal>
+            <Section title="Known Issues" viewAllHref="/known-issues">
+              <Grid>
+                {knownIssues.map((i) => (
+                  <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
+                ))}
+              </Grid>
+            </Section>
+          </Reveal>
+        )}
 
-        <Section title="Recently Fixed" viewAllHref="/browse?status=fixed">
-          {fixedIssues?.length ? (
-            <Grid>
-              {fixedIssues.map((i) => (
-                <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
-              ))}
-            </Grid>
-          ) : (
-            <EmptyState title="Nothing marked fixed yet" />
-          )}
-        </Section>
+        {!!fixedIssues?.length && (
+          <Reveal>
+            <Section title="Recently Fixed" viewAllHref="/browse?status=fixed">
+              <Grid>
+                {fixedIssues.map((i) => (
+                  <PostCard key={i.public_id} post={{ ...i, type: 'issue' }} />
+                ))}
+              </Grid>
+            </Section>
+          </Reveal>
+        )}
 
-        <Section title="Popular Feature Requests" viewAllHref="/feature-request">
-          {popularFeatures?.length ? (
-            <Grid>
-              {popularFeatures.map((f) => (
-                <PostCard key={f.public_id} post={{ ...f, type: 'feature_request' }} />
-              ))}
-            </Grid>
-          ) : (
-            <EmptyState title="No feature requests yet" description="Suggest the first one." />
-          )}
-        </Section>
+        {!!popularFeatures?.length && (
+          <Reveal>
+            <Section title="Popular Feature Requests" viewAllHref="/feature-request">
+              <Grid>
+                {popularFeatures.map((f) => (
+                  <PostCard key={f.public_id} post={{ ...f, type: 'feature_request' }} />
+                ))}
+              </Grid>
+            </Section>
+          </Reveal>
+        )}
       </div>
     </div>
   );
