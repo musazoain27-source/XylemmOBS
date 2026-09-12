@@ -55,7 +55,7 @@ export default function AskQuestionPage() {
     <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
       <div className="mb-8 flex flex-col items-center text-center">
         <Logo size={48} withText={false} href={null} className="mb-4" />
-        <h1 className="text-2xl font-bold text-charcoal-50">Ask a Question</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Ask a Question</h1>
         <p className="mt-2 text-sm text-charcoal-400">The more detail you give, the faster we can help.</p>
       </div>
 

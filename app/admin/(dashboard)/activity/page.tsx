@@ -28,7 +28,7 @@ export default function AdminActivityPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-charcoal-50">Activity Log</h1>
+      <h1 className="text-xl font-medium text-charcoal-50">Activity Log</h1>
 
       {loading ? (
         <ListSkeleton count={6} />

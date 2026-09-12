@@ -64,7 +64,7 @@ export default function AdminQuestionsPage() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-        <h1 className="text-2xl font-bold text-charcoal-50">Questions</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Questions</h1>
       </div>
 
       <div className="card flex flex-col gap-3 p-4 sm:flex-row">

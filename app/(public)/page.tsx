@@ -56,7 +56,7 @@ export default async function HomePage() {
         <div className="glow-orb -right-20 top-20 h-64 w-64 opacity-60" style={{ animationDelay: '1.5s' }} />
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Logo size={72} withText={false} href={null} className="mb-6 animate-fadeInUp" />
-          <h1 className="animate-fadeInUp font-pixel text-2xl leading-tight text-charcoal-50 sm:text-4xl" style={{ animationDelay: '0.1s' }}>
+          <h1 className="animate-fadeInUp font-pixel text-xl leading-tight text-charcoal-50 sm:text-2xl md:text-3xl" style={{ animationDelay: '0.1s' }}>
             XylemmOBS <span className="text-gradient">Support</span>
           </h1>
           <p className="mt-4 max-w-xl animate-fadeInUp text-balance text-charcoal-400" style={{ animationDelay: '0.2s' }}>

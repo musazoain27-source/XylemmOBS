@@ -5,7 +5,7 @@ export default async function AdminSettingsPage() {
 
   return (
     <div className="max-w-2xl space-y-6">
-      <h1 className="text-2xl font-bold text-charcoal-50">Settings</h1>
+      <h1 className="text-xl font-medium text-charcoal-50">Settings</h1>
 
       <div className="card p-5">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-charcoal-400">Your Account</h2>

@@ -20,7 +20,7 @@ export default function AdminUsersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-charcoal-50">Users</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Users</h1>
         <p className="mt-1 text-sm text-charcoal-500">
           Everyone with a XylemmOBS Support account. Role changes are made from the Supabase dashboard, not here — see Settings for why.
         </p>

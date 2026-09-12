@@ -93,7 +93,7 @@ export default function FeatureRequestPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <div className="mb-8 flex flex-col items-center text-center">
         <Logo size={48} withText={false} href={null} className="mb-4" />
-        <h1 className="text-2xl font-bold text-charcoal-50">Feature Requests</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Feature Requests</h1>
         <p className="mt-2 text-sm text-charcoal-400">Suggest an idea, or upvote one you'd like to see built.</p>
         <button onClick={() => setShowForm((v) => !v)} className="btn-primary mt-5 text-sm">
           {showForm ? 'Cancel' : '+ Suggest a Feature'}

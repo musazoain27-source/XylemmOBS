@@ -19,7 +19,7 @@ export default function StatCard({
   return (
     <div className="card p-5">
       <p className="text-xs font-medium uppercase tracking-wide text-charcoal-500">{label}</p>
-      <p className={cn('mt-2 text-2xl font-bold', accentClasses[accent])}>{value}</p>
+      <p className={cn('mt-2 text-2xl font-semibold', accentClasses[accent])}>{value}</p>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export default async function AdminDashboardPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-charcoal-50">Welcome back, {profile?.username}</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Welcome back, {profile?.username}</h1>
         <p className="mt-1 text-sm text-charcoal-500">Here's what's happening across XylemmOBS Support.</p>
       </div>
 

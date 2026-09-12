@@ -77,7 +77,7 @@ export default function BrowsePage() {
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
       <div className="mb-8 flex flex-col items-center text-center">
         <Logo size={44} withText={false} href={null} className="mb-4" />
-        <h1 className="text-2xl font-bold text-charcoal-50">Browse Questions & Issues</h1>
+        <h1 className="text-xl font-medium text-charcoal-50">Browse Questions & Issues</h1>
         <p className="mt-2 text-sm text-charcoal-400">Search everything the community has submitted.</p>
       </div>
 

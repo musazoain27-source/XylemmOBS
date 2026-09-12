@@ -53,6 +53,7 @@ module.exports = {
       keyframes: {
         fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
         fadeInUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+        pageIn: { '0%': { opacity: '0', transform: 'translateY(8px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
         pop: { '0%': { transform: 'scale(0.97)' }, '100%': { transform: 'scale(1)' } },
         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
         glowPulse: {
@@ -68,6 +69,7 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.35s ease-out both',
         fadeInUp: 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both',
+        pageIn: 'pageIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both',
         pop: 'pop 0.15s ease-out both',
         float: 'float 6s ease-in-out infinite',
         glowPulse: 'glowPulse 4s ease-in-out infinite',

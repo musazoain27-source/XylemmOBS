@@ -61,7 +61,7 @@ export default function AdminFeaturesPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-charcoal-50">Feature Requests</h1>
+      <h1 className="text-xl font-medium text-charcoal-50">Feature Requests</h1>
 
       <div className="card flex flex-col gap-3 p-4 sm:flex-row">
         <input placeholder="Search by title…" value={search} onChange={(e) => setSearch(e.target.value)} className="sm:flex-1" />

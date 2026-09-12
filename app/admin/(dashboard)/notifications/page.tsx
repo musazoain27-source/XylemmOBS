@@ -31,7 +31,7 @@ export default function AdminNotificationsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-charcoal-50">Notifications</h1>
+      <h1 className="text-xl font-medium text-charcoal-50">Notifications</h1>
 
       {loading ? (
         <ListSkeleton count={5} />
