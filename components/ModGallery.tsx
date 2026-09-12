@@ -14,11 +14,8 @@ export default function ModGallery() {
 
   return (
     <section>
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h2 className="text-lg font-semibold text-charcoal-50">See XylemmOBS in Action</h2>
-          <p className="mt-1 text-sm text-charcoal-500">A look at the in-game settings menu.</p>
-        </div>
+      <div className="mb-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-charcoal-400">See XylemmOBS in Action</h2>
       </div>
 
       <div className="card-interactive overflow-hidden p-2">
