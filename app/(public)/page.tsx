@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Logo from '@/components/Logo';
 import PostCard from '@/components/PostCard';
 import ModGallery from '@/components/ModGallery';
+import DownloadBanner from '@/components/DownloadBanner';
 import { EmptyState } from '@/components/ui/States';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 
@@ -91,6 +92,8 @@ export default async function HomePage() {
       </section>
 
       <div className="mx-auto max-w-7xl space-y-14 px-4 py-14 sm:px-6">
+        <DownloadBanner />
+
         <Section title="Recent Questions" viewAllHref="/browse?type=question">
           {recentQuestions?.length ? (
             <Grid>

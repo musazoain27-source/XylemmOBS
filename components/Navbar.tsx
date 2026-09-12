@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '@/components/Logo';
 import { cn } from '@/lib/utils';
+import { MOD_RELEASE } from '@/lib/modRelease';
 
 const LINKS = [
   { href: '/ask', label: 'Ask a Question' },
@@ -39,6 +40,9 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <a href={MOD_RELEASE.filePath} download className="btn-primary text-xs">
+            Download
+          </a>
           <Link href="/admin/login" className="btn-secondary text-xs">
             Admin Login
           </Link>
@@ -72,6 +76,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={MOD_RELEASE.filePath}
+              download
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-2 justify-center text-sm"
+            >
+              Download XylemmOBS
+            </a>
             <Link
               href="/admin/login"
               onClick={() => setOpen(false)}
